@@ -27,6 +27,14 @@ public class Movie {
        return thisAmount;
    }
 
+   public int getFrequentRenterPoints(int daysRented){
+       if ((this.getPriceCode() == Movie.NEW_RELEASE) && daysRented <= 1)
+          return 1;
+       // add bonus for a two day new release rental
+       else
+          return 2;
+   }
+
   public Movie(String title, int priceCode) {
       _title = title;
       _priceCode = priceCode;
